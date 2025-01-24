@@ -54,7 +54,7 @@ export default function ForgotPasswordForm() {
             Email de recuperação enviado! Verifique sua caixa de entrada.
           </div>
           <Link 
-            href="/login" 
+            href="/" 
             className="text-blue-600 hover:text-blue-800"
           >
             Voltar para o login
@@ -89,7 +89,7 @@ export default function ForgotPasswordForm() {
 
           <div className="text-center mt-4">
             <Link 
-              href="/login" 
+              href="/" 
               className="text-sm text-blue-600 hover:text-blue-800"
             >
               Voltar para o login
