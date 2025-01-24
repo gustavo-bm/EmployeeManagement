@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <style>
+    .primary { fill: #32A3F5 }
+    .secondary { fill: #1E88E5 }
+    .accent { fill: #64B5F6 }
+    .background { fill: #EBF3FA }
+  </style>
+  <rect class="background" width="500" height="500"/>
+  <g transform="translate(50, 50)">
+    <!-- Elementos decorativos de fundo -->
+    <circle class="accent" cx="200" cy="200" r="180" opacity="0.1"/>
+    <circle class="accent" cx="200" cy="200" r="150" opacity="0.1"/>
+    
+    <!-- Ícone principal -->
+    <g transform="translate(100, 100)">
+      <!-- Silhueta do prédio -->
+      <path class="primary" d="M200,50 h-150 v250 h300 v-250 h-150 l-50,-50 z"/>
+      
+      <!-- Janelas -->
+      <g class="secondary">
+        <rect x="70" y="80" width="40" height="40" rx="5"/>
+        <rect x="130" y="80" width="40" height="40" rx="5"/>
+        <rect x="190" y="80" width="40" height="40" rx="5"/>
+        
+        <rect x="70" y="140" width="40" height="40" rx="5"/>
+        <rect x="130" y="140" width="40" height="40" rx="5"/>
+        <rect x="190" y="140" width="40" height="40" rx="5"/>
+        
+        <rect x="70" y="200" width="40" height="40" rx="5"/>
+        <rect x="130" y="200" width="40" height="40" rx="5"/>
+        <rect x="190" y="200" width="40" height="40" rx="5"/>
+      </g>
+      
+      <!-- Ícones de pessoas -->
+      <g transform="translate(100, 150)">
+        <circle class="accent" cx="0" cy="0" r="15"/>
+        <circle class="accent" cx="40" cy="0" r="15"/>
+        <circle class="accent" cx="80" cy="0" r="15"/>
+      </g>
+    </g>
+  </g>
+</svg> 
