@@ -1,12 +1,23 @@
 {
-  "name": "my-app",
+  "name": "employee-management",
   "version": "0.1.0",
   "private": true,
+  "description": "Aplicativo de gerenciamento de funcionários.",
+  "author": "G3 Core",
   "scripts": {
-    "dev": "next dev --port 3000 --hostname 0.0.0.0",
-    "build": "next build",
-    "start": "next start --port 3000 --hostname 0.0.0.0",
-    "lint": "next lint"
+    "dev": "concurrently \"next dev\" \"wait-on http://localhost:3000 && electron .\"",
+    "build": "next build && electron-builder",
+    "start": "next start & electron ."
+  },
+  "main": "main.js",
+  "build": {
+    "appId": "com.g3core.employeemanagement",
+    "productName": "Employee Management",
+    "asar": false,
+    "win": {
+      "target": "nsis",
+      "icon": "public/G3_logo.ico"
+    }
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.0",
@@ -14,6 +25,8 @@
     "@replit/object-storage": "^1.0.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "concurrently": "^9.1.2",
+    "express": "^4.21.2",
     "firebase": "^11.2.0",
     "lucide-react": "^0.446.0",
     "next": "^14.2.4",
@@ -21,13 +34,16 @@
     "react-dom": "^18.2.0",
     "react-icons": "^5.4.0",
     "tailwind-merge": "^2.5.2",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "wait-on": "^8.0.3"
   },
   "devDependencies": {
     "@types/node": "^20.11.6",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "autoprefixer": "^10.4.17",
+    "electron": "^35.0.1",
+    "electron-builder": "^25.1.8",
     "eslint": "^8.56.0",
     "eslint-config-next": "14.2.4",
     "postcss": "^8.4.35",

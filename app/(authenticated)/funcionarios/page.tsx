@@ -507,11 +507,15 @@ export default function FuncionariosPage() {
     )
   }
 
-  const SearchBar = ({ onSearch }) => {
+  const SearchBar = ({ onSearch }: { onSearch: (searchTerm: string) => void }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [isFocused, setIsFocused] = useState(false);
 
-    const handleSearch = (e) => {
+    interface SearchBarProps {
+      onSearch: (searchTerm: string) => void;
+    }
+
+    const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       onSearch(searchTerm);
     };
@@ -555,7 +559,7 @@ export default function FuncionariosPage() {
         {isFocused && searchTerm && (
           <div className="absolute w-full mt-1 bg-white rounded-lg shadow-lg border border-gray-200 z-10">
             <div className="p-2 text-sm text-gray-500">
-              Pressione Enter para buscar "{searchTerm}"
+              Pressione Enter para buscar &quot;{searchTerm}&quot;
             </div>
           </div>
         )}
